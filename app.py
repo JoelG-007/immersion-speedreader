@@ -135,10 +135,11 @@ with output_col:
     if not st.session_state.words:
         with reader_box:
             render_word("focus")
-    st.markdown(
-        "<p style='text-align:center; opacity:0.5;'>Load text and press Play</p>",
-        unsafe_allow_html=True
-    )
+        st.markdown(
+            "<p style='text-align:center; opacity:0.5;'>Load text and press Play</p>",
+            unsafe_allow_html=True
+        )
+        st.stop()
 
     # End of text reached
     if st.session_state.index >= len(st.session_state.words):
