@@ -1,8 +1,10 @@
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
+
 from core.text_loader import load_txt
 from core.word_parser import parse_words
 from core.reader_engine import get_delay
+
 from ui.display import render_word
 from utils.pdf_reader import read_pdf
 
@@ -63,15 +65,6 @@ with controls_col:
             st.session_state.index = 0
             st.session_state.playing = False
 
-        st.divider()
-        
-        if st.button("Clear Input", use_container_width=True):
-            st.session_state.words = []
-            st.session_state.index = 0
-            st.session_state.playing = False
-            st.session_state.raw_text = ""
-            st.session_state.immersion = False
-
         speed_mode = st.radio(
             "Reading Speed",
             ["Beginner", "Student", "Advanced"],
@@ -85,6 +78,15 @@ with controls_col:
         }
 
         st.session_state.wpm = SPEED_MAP[speed_mode]
+
+        st.divider()
+
+        if st.button("Clear Input", use_container_width=True):
+            st.session_state.words = []
+            st.session_state.index = 0
+            st.session_state.playing = False
+            st.session_state.raw_text = ""
+            st.session_state.immersion = False
 
 # ================= INPUT (NORMAL MODE ONLY) =================
 if not st.session_state.immersion:
@@ -129,9 +131,13 @@ with output_col:
 
     # No text loaded
     if not st.session_state.words:
-        if not st.session_state.immersion:
-            st.info("Load text and press Play")
-        st.stop()
+        with reader_box:
+            render_word("focus")
+    st.markdown(
+        "<p style='text-align:center; opacity:0.5;'>Load text and press Play</p>",
+        unsafe_allow_html=True
+    )
+    st.stop()
 
     # End of text reached
     if st.session_state.index >= len(st.session_state.words):
