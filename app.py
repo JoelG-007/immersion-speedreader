@@ -108,6 +108,7 @@ if not st.session_state.immersion:
                 st.session_state.index = 0
                 st.session_state.playing = False
                 st.success(f"{len(st.session_state.words)} words loaded")
+                st.rerun()
 
         # -------- Paste text --------
         else:
@@ -118,12 +119,13 @@ if not st.session_state.immersion:
                 key="raw_text"
             )
 
-            if st.button("Load Text"):
-                if st.session_state.raw_text.strip():
-                    st.session_state.words = parse_words(st.session_state.raw_text)
-                    st.session_state.index = 0
-                    st.session_state.playing = False
-                    st.success(f"{len(st.session_state.words)} words loaded")
+        if st.button("Load Text"):
+            if st.session_state.raw_text.strip():
+                st.session_state.words = parse_words(st.session_state.raw_text)
+                st.session_state.index = 0
+                st.session_state.playing = False
+                st.success(f"{len(st.session_state.words)} words loaded")
+                st.rerun()
 
 # ================= OUTPUT / READER =================
 with output_col:
