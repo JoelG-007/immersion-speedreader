@@ -63,6 +63,8 @@ with controls_col:
             st.session_state.index = 0
             st.session_state.playing = False
 
+        st.divider()
+        
         if st.button("Clear Input", use_container_width=True):
             st.session_state.words = []
             st.session_state.index = 0
