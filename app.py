@@ -22,7 +22,7 @@ DEFAULTS = {
     "playing": False,
     "wpm": 350,
     "immersion": False,
-    "raw_text": ""      # stores pasted text safely across reruns (Since the text gets cleared once entering or exiting immersion mode)
+    "raw_text": ""
 }
 
 for k, v in DEFAULTS.items():
@@ -44,8 +44,6 @@ if not st.session_state.immersion:
     )
 
 # ---------------- LAYOUT ----------------
-# Normal mode: Controls + Input + Reader
-# Immersion mode: Controls + Reader
 if st.session_state.immersion:
     controls_col, output_col = st.columns([1, 4])
 else:
@@ -99,7 +97,6 @@ if not st.session_state.immersion:
             horizontal=True
         )
 
-        # -------- Upload file --------
         if mode == "Upload File":
             file = st.file_uploader("Upload TXT or PDF", type=["txt", "pdf"])
             if file:
@@ -110,7 +107,6 @@ if not st.session_state.immersion:
                 st.success(f"{len(st.session_state.words)} words loaded")
                 st.rerun()
 
-        # -------- Paste text --------
         else:
             st.text_area(
                 "Paste your text below",
@@ -119,19 +115,19 @@ if not st.session_state.immersion:
                 key="raw_text"
             )
 
-        if st.button("Load Text"):
-            if st.session_state.raw_text.strip():
-                st.session_state.words = parse_words(st.session_state.raw_text)
-                st.session_state.index = 0
-                st.session_state.playing = False
-                st.success(f"{len(st.session_state.words)} words loaded")
-                st.rerun()
+            if st.button("Load Text"):
+                if st.session_state.raw_text.strip():
+                    st.session_state.words = parse_words(st.session_state.raw_text)
+                    st.session_state.index = 0
+                    st.session_state.playing = False
+                    st.success(f"{len(st.session_state.words)} words loaded")
+                    st.rerun()
 
 # ================= OUTPUT / READER =================
 with output_col:
     reader_box = st.container()
 
-    # No text loaded
+    # ---------- NO TEXT ----------
     if not st.session_state.words:
         with reader_box:
             render_word("focus")
@@ -139,26 +135,25 @@ with output_col:
             "<p style='text-align:center; opacity:0.5;'>Load text and press Play</p>",
             unsafe_allow_html=True
         )
-        st.stop()
 
-    # End of text reached
-    if st.session_state.index >= len(st.session_state.words):
+    # ---------- END OF TEXT ----------
+    elif st.session_state.index >= len(st.session_state.words):
         st.session_state.playing = False
         if not st.session_state.immersion:
             st.success("End of text reached")
         st.stop()
 
-    # Current word
-    word = st.session_state.words[st.session_state.index]
-    delay = get_delay(word, st.session_state.wpm)
+    # ---------- NORMAL READING ----------
+    else:
+        word = st.session_state.words[st.session_state.index]
+        delay = get_delay(word, st.session_state.wpm)
 
-    with reader_box:
-        render_word(word)
+        with reader_box:
+            render_word(word)
 
-    # Advance reader
-    if st.session_state.playing:
-        st_autorefresh(
-            interval=int(delay * 1000),
-            key="reader_clock"
-        )
-        st.session_state.index += 1
+        if st.session_state.playing:
+            st_autorefresh(
+                interval=int(delay * 1000),
+                key="reader_clock"
+            )
+            st.session_state.index += 1
