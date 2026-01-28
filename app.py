@@ -63,6 +63,13 @@ with controls_col:
             st.session_state.index = 0
             st.session_state.playing = False
 
+        if st.button("Clear Input", use_container_width=True):
+            st.session_state.words = []
+            st.session_state.index = 0
+            st.session_state.playing = False
+            st.session_state.raw_text = ""
+            st.session_state.immersion = False
+
         speed_mode = st.radio(
             "Reading Speed",
             ["Beginner", "Student", "Advanced"],
