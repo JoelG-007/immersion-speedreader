@@ -1,10 +1,20 @@
 # Immersion
 **Visual RSVP Speed Reading App**
 
+[![GitHub stars](https://img.shields.io/github/stars/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/network)
+[![GitHub issues](https://img.shields.io/github/issues/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/issues)
+[![License](https://img.shields.io/github/license/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/blob/main/LICENSE)
+[![Python](https://img.shields.io/badge/python-3.x-blue?style=flat-square)](https://www.python.org/)
+[![Built with Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-orange?style=flat-square)](https://streamlit.io/)
+[![Live Site](https://img.shields.io/badge/Live%20Demo-Streamlit.app-blue?style=flat-square&logo=streamlit)](https://immersion-speedreader.streamlit.app)
+
+---
+
 ## Inspiration
 
 I was casually scrolling through Instagram when I came across a reel about  
-**RSVP (Rapid Serial Visual Presentation)** - a technique where words are shown one at a time at a fixed point on the screen.
+**RSVP (Rapid Serial Visual Presentation)** – a technique where words are shown one at a time at a fixed point on the screen.
 
 What caught my attention was that:
 - I was reading **much faster**
@@ -12,8 +22,9 @@ What caught my attention was that:
 - I could still **retain the information**
 - It felt less tiring compared to reading long paragraphs
 
-As a student who already reads fast, I usually find it **boring and mentally exhausting** to scroll through chunks of pages, PDFs, or notes. That’s when I thought -
-**why not build a simple tool that makes reading faster, cleaner, and less tiring?**
+As a student who already reads fast, I usually find it **boring and mentally exhausting** to scroll through chunks of pages, PDFs, or notes. That’s when I thought:
+
+> **why not build a simple tool that makes reading faster, cleaner, and less tiring?**
 
 This project is the result of that idea.
 
@@ -30,9 +41,9 @@ Instead of reading paragraphs:
 - Reading speed can be adjusted based on comfort
 
 It’s designed to reduce:
-- Eye strain
-- Mental fatigue
-- Boredom from long reading sessions
+- Eye strain  
+- Mental fatigue  
+- Boredom from long reading sessions  
 
 ---
 
@@ -90,14 +101,7 @@ This was a **productivity-first decision**, not laziness (maybe a little....).
 └── README.md
 
 ```
-## How to Run
-
-```bash
-Copy code
-pip install streamlit streamlit-autorefresh
-streamlit run app.py
-
-```
+---
 
 ## Disclaimer
 This is a minor project built for:
@@ -106,6 +110,8 @@ Experimentation
 Improving personal productivity
 
 It’s not meant to replace traditional reading, but to offer a faster alternative when skimming, revising, or consuming large amounts of text.
+
+---
 
 ## Final Thoughts
 This project started from curiosity and a random reel -

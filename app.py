@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_autorefresh import st_autorefresh
+#from streamlit_autorefresh import st_autorefresh
 
 from core.text_loader import load_txt
 from core.word_parser import parse_words
@@ -130,7 +130,7 @@ with output_col:
     # ---------- NO TEXT ----------
     if not st.session_state.words:
         with reader_box:
-            render_word("focus")
+            render_word("...")
         st.markdown(
             "<p style='text-align:center; opacity:0.5;'>Load text and press Play</p>",
             unsafe_allow_html=True
