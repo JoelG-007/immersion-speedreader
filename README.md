@@ -1,10 +1,6 @@
 # Immersion
 **Visual RSVP Speed Reading App**
 
-[![GitHub stars](https://img.shields.io/github/stars/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/network)
-[![GitHub issues](https://img.shields.io/github/issues/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/issues)
-[![License](https://img.shields.io/github/license/JoelG-007/immersion-speedreader?style=flat-square)](https://github.com/JoelG-007/immersion-speedreader/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.x-blue?style=flat-square)](https://www.python.org/)
 [![Built with Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-orange?style=flat-square)](https://streamlit.io/)
 [![Live Site](https://img.shields.io/badge/Live%20Demo-Streamlit.app-blue?style=flat-square&logo=streamlit)](https://immersion-speedreader.streamlit.app)
@@ -116,5 +112,6 @@ It’s not meant to replace traditional reading, but to offer a faster alternati
 ## Final Thoughts
 This project started from curiosity and a random reel -
 and turned into something genuinely useful for my own study workflow.
+
 
 If it helps even one other student read better and feel less exhausted, that’s already a win...
