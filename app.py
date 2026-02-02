@@ -1,5 +1,5 @@
 import streamlit as st
-#from streamlit_autorefresh import st_autorefresh
+from streamlit_autorefresh import st_autorefresh
 
 from core.text_loader import load_txt
 from core.word_parser import parse_words
