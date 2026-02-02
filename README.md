@@ -101,9 +101,9 @@ This was a **productivity-first decision**, not laziness (maybe a little....).
 
 ## Disclaimer
 This is a minor project built for:
-Learning
-Experimentation
-Improving personal productivity
+- Learning
+- Experimentation
+- Improving personal productivity
 
 It’s not meant to replace traditional reading, but to offer a faster alternative when skimming, revising, or consuming large amounts of text.
 
@@ -115,3 +115,4 @@ and turned into something genuinely useful for my own study workflow.
 
 
 If it helps even one other student read better and feel less exhausted, that’s already a win...
+
